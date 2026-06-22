@@ -98,7 +98,9 @@
 
   /* combustão (discreto) */
   .comb{max-width:760px;margin:0 auto;text-align:center}
-  .comb table{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px}
+  .comb-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:18px}
+  .comb table{width:100%;border-collapse:collapse;font-size:15px}
+  @media(max-width:430px){.comb th,.comb td{padding:8px 7px;font-size:12.5px}.comb th.r,.comb td.r{white-space:nowrap}}
   .comb th{background:var(--preto);color:#fff;padding:10px 12px;text-align:left;font-size:12.5px}
   .comb th.r,.comb td.r{text-align:right}
   .comb td{padding:10px 12px;border-bottom:1px solid var(--c100)}
@@ -255,14 +257,14 @@
     <span class="eyebrow">Prefere combustão?</span>
     <h2 style="font-size:28px;margin:8px 0 6px">A gente também tem</h2>
     <p style="color:var(--c500)">Se você ainda quer começar no carro a combustão, temos planos a partir de R$ 750 por semana.</p>
-    <table>
+    <div class="comb-scroll"><table>
       <thead><tr><th>Categoria</th><th>Modelos</th><th class="r">Semanal</th><th class="r">Caução</th></tr></thead>
       <tbody>
         <tr><td>Promoção</td><td>Fiat Mobi Like 2026</td><td class="r v">R$ 750</td><td class="r">R$ 1.200</td></tr>
         <tr><td>Categoria A</td><td>Onix · Joy Plus · HB20</td><td class="r v">R$ 850</td><td class="r">R$ 1.200</td></tr>
         <tr><td>Categoria B</td><td>Argo · Polo · Onix LT Plus · Peugeot</td><td class="r v">R$ 890</td><td class="r">R$ 1.200</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p style="font-size:13px;color:var(--c500);margin-top:12px">1ª semanal grátis na promoção vigente. Valores e disponibilidade podem variar.</p><div style="margin-top:20px"><a class="btn" style="background:var(--preto);border-color:var(--preto)" href="https://app.pipefy.com/public/form/Nx3RxExy">Quero um combustão</a></div>
   </div>
 </section>
