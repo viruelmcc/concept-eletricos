@@ -378,8 +378,7 @@ size();window.addEventListener('resize',size);loop();})();
   function fire(ev,m){try{if(window.fbq)fbq('track',ev);}catch(e){}try{(window.dataLayer=window.dataLayer||[]).push({event:'lead_click',metodo:m,evento_meta:ev});}catch(e){}}
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
-    if(h.indexOf('pipefy.com')>-1){fire('Lead','formulario');}
-    else if(a.classList.contains('wa-float')||h.indexOf('wa.me')>-1){fire('Contact','whatsapp');}
+    if(a.classList.contains('wa-float')||h.indexOf('wa.me')>-1){fire('Contact','whatsapp');}
   },true);
 })();
 </script>
