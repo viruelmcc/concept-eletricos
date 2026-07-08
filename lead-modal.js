@@ -6,8 +6,15 @@
   if (window.__conceptLeadModal) return;
   window.__conceptLeadModal = true;
 
-  var LP = /eletric/i.test(location.hostname) ? "eletrico" : "combustao";
-  var EVENTO = LP === "eletrico" ? "LeadEletrico" : "LeadCombustao";
+  var host = location.hostname;
+  // www/apex carregam a promo da semana grátis (LP principal) → mesmo evento da promo.
+  var LP = /eletric/i.test(host)
+    ? "eletrico"
+    : /promo|gratis|^www\.|^locadoraconcept/i.test(host)
+      ? "gratis"
+      : "combustao";
+  var EVENTO =
+    LP === "gratis" ? "LeadSemanaGratis" : LP === "eletrico" ? "LeadEletrico" : "LeadCombustao";
   var LEAD_ENDPOINT =
     "https://quaks.com.br/api/public/lead/paula-casagrande?key=aa5243d8a2a3955ff6d712d55e4c9ee8e477964c1c6b2fc3";
 
